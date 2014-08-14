@@ -21,7 +21,6 @@ class LabelHoldingCell: UICollectionViewCell {
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.setTranslatesAutoresizingMaskIntoConstraints(false)
     
     let label = UILabel(frame: self.bounds)
     label.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -36,6 +35,8 @@ class LabelHoldingCell: UICollectionViewCell {
     label.preferredMaxLayoutWidth = 320
     
     self.contentView.addSubview(label)
+
+    self.setTranslatesAutoresizingMaskIntoConstraints(false)
     let viewBindings = ["label":label]
     self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[label]|", options: nil, metrics: nil, views: viewBindings))
     self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[label]|", options: nil, metrics: nil, views: viewBindings))
