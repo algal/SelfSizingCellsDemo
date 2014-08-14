@@ -26,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E9A8F8B199C8632005975DB /* LabelPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LabelPlayground.playground; sourceTree = "<group>"; };
 		5EF23208199C283800DB868E /* SelfSizingCellsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelfSizingCellsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EF2320C199C283800DB868E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EF2320D199C283800DB868E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 				5EF23211199C283800DB868E /* Main.storyboard */,
 				5EF23214199C283800DB868E /* Images.xcassets */,
 				5EF2320B199C283800DB868E /* Supporting Files */,
+				5E9A8F8B199C8632005975DB /* LabelPlayground.playground */,
 			);
 			path = SelfSizingCellsDemo;
 			sourceTree = "<group>";
@@ -401,6 +403,7 @@
 				5EF23226199C283800DB868E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EF23227199C283800DB868E /* Build configuration list for PBXNativeTarget "SelfSizingCellsDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +412,7 @@
 				5EF23229199C283800DB868E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
