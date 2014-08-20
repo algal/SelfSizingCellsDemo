@@ -14,7 +14,7 @@ class LabelHoldingCell: UICollectionViewCell {
   override class func requiresConstraintBasedLayout() -> Bool { return true; }
   class var classReuseIdentifier: String { return "cellIdentifier" }
 
-  required init(coder aDecoder: NSCoder!) {
+  required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     // not implemented
   }
@@ -26,16 +26,27 @@ class LabelHoldingCell: UICollectionViewCell {
     label.setTranslatesAutoresizingMaskIntoConstraints(false)
     label.backgroundColor = UIColor.lightGrayColor()
     label.numberOfLines = 0
-    /* this next line is needed to allow word
-    wrap within the label. It is ugly, since we'd 
-    prefer to dynamically constrain the
-    label's preferredMaxLayoutWidth to the width of
-    the containing view, which is the 
-    LabelHoldingCell.contentView */
+    /*
+    
+    This next line is needed to force the label to wrap words
+    at the width of an iphone screen.
+    
+    Hardcoding this width is ugly. We'd prefer it if the
+    label's preferredMaxLayoutWidth was dynamically set to the 
+    width of the view, which expanded to the width available to it, 
+    after all preceding items were layed out. 
+    
+    This is a battle for another day.
+    
+    */
     label.preferredMaxLayoutWidth = 320
     
     self.contentView.addSubview(label)
 
+    // use constraints to configure the cell to hug the label.
+    // since AL constraints have no causal directionality
+    // (unlike autoresizing masks), this means the label's
+    // intrinsic content size will determine the cell's size.
     self.setTranslatesAutoresizingMaskIntoConstraints(false)
     let viewBindings = ["label":label]
     self.contentView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[label]|", options: nil, metrics: nil, views: viewBindings))
@@ -43,7 +54,7 @@ class LabelHoldingCell: UICollectionViewCell {
 
     self.labelView = label
   }
-  
+
   func setText(text:String) {
     self.labelView.text = text;
   }
