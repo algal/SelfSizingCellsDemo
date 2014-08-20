@@ -1,13 +1,15 @@
 WWDC2014 session 226, "What's new in Table and Collection Views",
 talks about self-sizing cells. These are collection view cells that
-are sized by their own declared intrinsicContentSize, rather than by a
-size determined by the layout object or its delegate.
+the collection view will correctly size based the cell's own
+intrinsicContentSize, rather than by a size determined by the layout
+object or its delegate.
 
 The speaker, Olivier, shows an example of collection view cells that
-self-size based on their own Auto Layout constraints. This project
-reproduces that example.
+self-size based on their own Auto Layout constraints.
 
-I also tried to get this working in Interface Builder but it does not
-seem to work as of Xcode 6 beta 5.
+This project reproduces that example.
 
-But it works in code.
+This project also shows that as of Xcode6Beta6, there seems to be
+a bug where the collection view does not calculate the overall
+contentSize of the scrollable region correctly.
+
