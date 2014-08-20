@@ -11,10 +11,9 @@ import UIKit
 /*
 NOTE TO APPLE (1/2): 
 
-This line of text is split into tokens. Each token goes in its own label. Each cell contains one label.
+This line of text is split into words. Each word goes in its own label. Each cell contains one label.
 
-The cells correctly self-sizes based on the size of the label using
-iOS8's support for self-sizing collection view cells.
+The cells correctly self-size based on the size of the label, using iOS8's support for self-sizing collection view cells.
 
 This is exactly as per Olivier Gutknecht's demonstration app in WWDC 2014, session 226, What's New in
 Table and Collection Views.
@@ -25,14 +24,17 @@ let smallitems = "The UICollectionViewFlowLayout class is a concrete layout obje
 /*
 NOTE TO APPLE (1/2): 
 
-This long item contains a single block of text that needs to be word-wrapped to fit into
-a label with an iPhone screen width of 320. As a result this item produce a self-sizing cell that
-is taller than the other cells, since it must contain a multiline label. This item will be the 
-last in the collection.
+This long item contains a long string of text that needs to be word-wrapped to fit into
+a label with an iPhone screen width of 320. As a result of wrapping onto multiple lines, this 
+item produce a self-sizing cell that is taller than the other cells.
+
+This item will be the last in the collection.
 
 THE PROBLEM IS THAT: although UICollectionView correctly self-sizes the cells based on the
-size of the required labels, it does not seem to calculate the collectionViewContentSize correctly,
-and this last item is visible but not within the scrollable region. 
+size of the required labels, it does not seem correctly to calculate the collectionViewContentSize 
+based on the cell sizies. This last item in the collection does not display within the
+scrollable region, but is visible if you manually scroll to see outside the bounds of the
+scrollable region.
 
 */
 let onelongitem="I am a long string containing spaces to see if text wraps within a label properly or if instead it produces undesired artefacts."

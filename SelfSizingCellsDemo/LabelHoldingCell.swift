@@ -8,6 +8,14 @@
 
 import UIKit
 
+// APPLE: Please see comments in ViewController.swift for an explanation of this bug.
+
+/*
+This UICollectionViewCell contains a UILabel and hugs it with AL constraints.
+
+The label.preferredMaxLayoutWidth=320, so the cell can display the
+entirety of text which would not fit on a portrait iPhone screen.
+*/
 class LabelHoldingCell: UICollectionViewCell {
   weak var labelView: UILabel!
 
