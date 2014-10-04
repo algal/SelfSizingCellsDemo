@@ -49,28 +49,28 @@ class ViewController: UICollectionViewController, UICollectionViewDataSource {
     super.viewDidLoad()
     
     // register the cell type
-    self.collectionView.registerClass(LabelHoldingCell.self, forCellWithReuseIdentifier: LabelHoldingCell.classReuseIdentifier)
+    self.collectionView!.registerClass(LabelHoldingCell.self, forCellWithReuseIdentifier: LabelHoldingCell.classReuseIdentifier)
     
     // tell the collection view layout object to let the cells self-size
-    var flowLayout = self.collectionView.collectionViewLayout as UICollectionViewFlowLayout
+    var flowLayout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
     flowLayout.estimatedItemSize = CGSize(width: 30, height: 20)
   }
 
   // MARK: <UICollectionViewDatasource>
   
-  override func collectionView(collectionView: UICollectionView!,
-    cellForItemAtIndexPath indexPath: NSIndexPath!) -> UICollectionViewCell!
+  override func collectionView(collectionView: UICollectionView,
+    cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
   {
     var cell = collectionView.dequeueReusableCellWithReuseIdentifier(LabelHoldingCell.classReuseIdentifier, forIndexPath: indexPath) as LabelHoldingCell
     cell.setText(items[indexPath.row])
     return cell
   }
   
-  override func numberOfSectionsInCollectionView(collectionView: UICollectionView!) -> Int {
+  override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
     return 1;
   }
   
-  override func collectionView(collectionView: UICollectionView!, numberOfItemsInSection section: Int) -> Int {
+  override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return items.count;
   }
 }
