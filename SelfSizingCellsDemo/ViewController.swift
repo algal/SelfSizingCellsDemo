@@ -52,7 +52,7 @@ class ViewController: UICollectionViewController, UICollectionViewDataSource {
     self.collectionView!.registerClass(LabelHoldingCell.self, forCellWithReuseIdentifier: LabelHoldingCell.classReuseIdentifier)
     
     // tell the collection view layout object to let the cells self-size
-    var flowLayout = self.collectionView!.collectionViewLayout as UICollectionViewFlowLayout
+    var flowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
     flowLayout.estimatedItemSize = CGSize(width: 30, height: 20)
   }
 
@@ -61,7 +61,7 @@ class ViewController: UICollectionViewController, UICollectionViewDataSource {
   override func collectionView(collectionView: UICollectionView,
     cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
   {
-    var cell = collectionView.dequeueReusableCellWithReuseIdentifier(LabelHoldingCell.classReuseIdentifier, forIndexPath: indexPath) as LabelHoldingCell
+    var cell = collectionView.dequeueReusableCellWithReuseIdentifier(LabelHoldingCell.classReuseIdentifier, forIndexPath: indexPath) as! LabelHoldingCell
     cell.setText(items[indexPath.row])
     return cell
   }
