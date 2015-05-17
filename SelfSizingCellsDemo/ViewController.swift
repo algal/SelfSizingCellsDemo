@@ -30,11 +30,16 @@ item produce a self-sizing cell that is taller than the other cells.
 
 This item will be the last in the collection.
 
-THE PROBLEM IS THAT: although UICollectionView correctly self-sizes the cells based on the
+THE PROBLEM AS OF iOS 8.0: although UICollectionView correctly self-sizes the cells based on the
 size of the required labels, it does not seem correctly to calculate the collectionViewContentSize 
 based on the cell sizies. This last item in the collection does not display within the
 scrollable region, but is visible if you manually scroll to see outside the bounds of the
 scrollable region.
+
+THE PROBLEM AS OF iOS 8.3: in iOS 8.3, UICollectionView seems to no longer be displaying the
+last item at all. So now the UICollectionView's calculation of the contentSize is consistent 
+with its rendering of the cells, in that they are both incorrect in the same way -- they 
+ignore the item.
 
 */
 let onelongitem="I am a long string containing spaces to see if text wraps within a label properly or if instead it produces undesired artefacts."
