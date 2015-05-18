@@ -9,7 +9,8 @@ self-size based on their own Auto Layout constraints.
 
 This project reproduces that example.
 
-This project also shows that as of Xcode6Beta6, there seems to be
-a bug where the collection view does not calculate the overall
-contentSize of the scrollable region correctly.
+This project also shows that as of Xcode 6.3.1 iOS SDK 8.3, there
+seems to be a bug where the collection view will either (a) fail to
+calculate the overall contentSize of the scrollable region correctly,
+or (b) simply fail to present some items offered by the data source.
 
