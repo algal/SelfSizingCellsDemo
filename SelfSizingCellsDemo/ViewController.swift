@@ -8,6 +8,25 @@
 
 import UIKit
 
+
+/*
+INSTRUCTIONS: build and run on an iPhone 5s-sized screen.
+
+The flag below toggle the estimatedItemSize height between 20 and 21.
+
+For 20 and below, the collection view does not display its last element.
+
+For above 20, the collection view does display its last element.
+
+So the estimatedItemSize, which is supposed to serve only as a perf
+optimization, is determining whether the collection works or does not
+work at its basic function of displaying items.
+
+
+*/
+let useMagicallyBrokenHeight:Bool = true
+
+
 /*
 NOTE TO APPLE (1/2): 
 
@@ -58,7 +77,10 @@ class ViewController: UICollectionViewController, UICollectionViewDataSource {
     
     // tell the collection view layout object to let the cells self-size
     var flowLayout = self.collectionView!.collectionViewLayout as! UICollectionViewFlowLayout
-    flowLayout.estimatedItemSize = CGSize(width: 30, height: 20)
+
+    let estimationHeight = useMagicallyBrokenHeight ? 20 : 21
+    
+    flowLayout.estimatedItemSize = CGSize(width: 30, height: estimationHeight)
   }
 
   // MARK: <UICollectionViewDatasource>
